@@ -1,0 +1,13 @@
+@import "../styles/variables";
+
+.generalButton {
+    border-radius: 1em;
+    border-color: $color-border;
+    background-color: $color-elements;
+    color: $color-font;
+}
+
+.generalButton:hover {
+    background-color: $color-hover;
+
+}

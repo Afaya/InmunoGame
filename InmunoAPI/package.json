@@ -1,0 +1,26 @@
+{
+  "name": "inmunoapi",
+  "version": "1.0.0",
+  "description": "API server sensors data",
+  "main": "inmunoServer.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon server.js"
+  },
+  "author": "Afaya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.17.1",
+    "node-dht-sensor": "^0.3.0",
+    "sds011-client": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+  }
+}

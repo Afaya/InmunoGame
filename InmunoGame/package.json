@@ -1,0 +1,17 @@
+{
+  "name": "inmunogame",
+  "version": "1.0.0",
+  "description": "IoT Project",
+  "main": "inmunoGame.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Afaya",
+  "license": "ISC",
+  "dependencies": {
+    "node-dht-sensor": "^0.3.0",
+    "onoff": "^4.1.1",
+    "pico-speaker": "0.0.7",
+    "sds011-client": "^1.0.1"
+  }
+}

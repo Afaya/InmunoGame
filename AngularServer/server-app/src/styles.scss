@@ -1,0 +1,62 @@
+@-ms-viewport {
+    width: device-width;
+}
+
+@import "styles/variables";
+@import "styles/buttons";
+@import "styles/mediaScreen";
+
+/* Fonts */
+@font-face {
+    font-family: Montserrat;
+    src: url(./assets/fonts/Montserrat-Light.eot) format('eot');
+}
+
+/* DOM */
+html {
+    width: $width-html;
+    height: $height-html;
+    overflow: hidden;
+}
+
+body {
+    width: $width-body;
+    height: $height-body;
+    color: $color-font-dark;
+    font-family: Montserrat, sans-serif;
+    padding: $padding-body;
+    margin: $margin-body;
+}
+
+input {
+    font-family: Montserrat, sans-serif;
+    color: $color-font-dark;
+}
+
+input::placeholder{
+    color: $color-font;
+}
+
+header {
+    height: $height-header;
+    max-height: $height-header;
+    margin: $margin-header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header h2 {
+    margin: $margin-none;
+}
+
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: $height-article;
+    max-height: $height-article;
+    min-width: $width-article;
+    max-width: $width-article;
+    margin: 0px;
+}

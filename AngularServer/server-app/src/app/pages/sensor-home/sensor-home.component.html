@@ -1,0 +1,15 @@
+<div class="sensorsHomeContainer">
+  <ngx-spinner></ngx-spinner>
+
+  <div class="sensorInformation" [ngClass]="getInfluenzaClass()">
+    <h2>Alerta gripe: {{influenzaRisk}}</h2>
+    <span>{{influenzaRiskDescription}}</span>
+  </div>
+
+  <div class="sensorInformation" [ngClass]="getParticlesClass()">
+    <h2>Alerta alergia: {{particlesRisk}}</h2>
+    <span>{{particlesRiskDescription}}</span>
+  </div>
+
+  <button class="generalButton" (click)="seeEvolutionData()">Ver evolución</button>
+</div>

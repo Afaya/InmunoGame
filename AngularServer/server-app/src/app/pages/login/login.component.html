@@ -1,0 +1,16 @@
+<div class="loginContainer">
+    <span *ngIf="showMessage" class="loginMessage">
+        {{message}}
+    </span>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+        <div class="loginFormRow">
+            <label for="username">Usuario</label>
+            <input id="username" placeholder="Usuario" type="text" formControlName="username">
+        </div>
+        <div class="loginFormRow">
+            <label for="password">Contraseña</label>
+            <input id="password" placeholder="Contraseña" type="password" formControlName="password">
+        </div>
+        <button class="generalButton loginFormSubmit" type="submit" [disabled]="!loginForm.valid">Entrar</button>
+    </form>
+</div>

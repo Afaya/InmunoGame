@@ -1,0 +1,97 @@
+@import "../styles/variables";
+
+body {
+    // background-image: url('./assets/images/personajeRosa.png');
+    // background-repeat: no-repeat;
+    // background-size: contain; /* cover */
+    background-position: center;
+    background-color: $color-background;
+
+    font-size: 1em;
+}
+
+
+/* Adaptación tamaño letra según pantalla */
+@media screen and (max-width: 2100px) {
+    .graphDiv {
+        width: 26%;
+    }
+}
+
+@media screen and (max-width: 1900px) {
+    .graphDiv {
+        width: 28%;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .graphDiv {
+        width: 32%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .graphDiv {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .graphDiv {
+        width: 38%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .graphDiv {
+        width: 42%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .graphDiv {
+        width: 44%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .graphDiv {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .graphDiv {
+        width: 56%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .graphDiv {
+        width: 59%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .graphDiv {
+        width: 67%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .graphDiv {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .graphDiv {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .graphDiv {
+        width: 85%;
+    }
+}
