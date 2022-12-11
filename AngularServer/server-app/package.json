@@ -21,7 +21,7 @@
     "@angular/router": "~8.1.1",
     "chart.js": "^2.8.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "g": "^2.0.1",
     "moment": "^2.24.0",
     "ngx-spinner": "^8.0.3",
