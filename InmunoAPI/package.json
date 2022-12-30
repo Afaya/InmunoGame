@@ -18,7 +18,7 @@
     "sds011-client": "^1.0.1"
   },
   "devDependencies": {
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "nodemon": "^1.19.1",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
