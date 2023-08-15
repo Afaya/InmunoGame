@@ -1,15 +1,29 @@
 <div class="sensorsHomeContainer">
   <ngx-spinner></ngx-spinner>
 
-  <div class="sensorInformation" [ngClass]="getInfluenzaClass()">
-    <h2>Alerta gripe: {{influenzaRisk}}</h2>
-    <span>{{influenzaRiskDescription}}</span>
+  <div
+    class="sensorInformation"
+    [ngClass]="getInfluenzaClass()"
+    *ngIf="!isErrorDisplayed"
+  >
+    <h2>Alerta gripe: {{ influenzaRisk }}</h2>
+    <span>{{ influenzaRiskDescription }}</span>
   </div>
 
-  <div class="sensorInformation" [ngClass]="getParticlesClass()">
-    <h2>Alerta alergia: {{particlesRisk}}</h2>
-    <span>{{particlesRiskDescription}}</span>
+  <div
+    class="sensorInformation"
+    [ngClass]="getParticlesClass()"
+    *ngIf="!isErrorDisplayed"
+  >
+    <h2>Alerta alergia: {{ particlesRisk }}</h2>
+    <span>{{ particlesRiskDescription }}</span>
   </div>
 
-  <button class="generalButton" (click)="seeEvolutionData()">Ver evolución</button>
+  <span *ngIf="isErrorDisplayed" class="errorMessage">
+    Error al recibir los datos, volveremos a probar en unos segundos
+  </span>
+
+  <button class="generalButton" (click)="seeEvolutionData()">
+    Ver evolución
+  </button>
 </div>

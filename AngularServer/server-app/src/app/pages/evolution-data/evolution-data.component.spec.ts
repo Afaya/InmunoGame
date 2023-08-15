@@ -1,27 +1,37 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { EvolutionDataComponent } from './evolution-data.component';
-import { SpinnerService } from 'src/app/services/spinner.service';
-import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
-import { DataReadService } from 'src/app/services/data-read.service';
-import { Router } from '@angular/router';
+import { EvolutionDataComponent } from "./evolution-data.component";
+import { SpinnerService } from "src/app/services/spinner.service";
+import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
+import { DataReadService } from "src/app/services/data-read.service";
+import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
-describe('EvolutionDataComponent', () => {
+describe("EvolutionDataComponent", () => {
   let component: EvolutionDataComponent;
   let fixture: ComponentFixture<EvolutionDataComponent>;
-  const spinnerService: SpinnerService = new SpinnerService(new NgxSpinnerService());
+  const spinnerService: SpinnerService = new SpinnerService(
+    new NgxSpinnerService()
+  );
+  const dataReadService: DataReadService = new DataReadService(
+    new HttpClient(null)
+  );
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [NgxSpinnerModule],
-      declarations: [ EvolutionDataComponent ],
+      declarations: [EvolutionDataComponent],
       providers: [
-        {provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); }},
-        {provide: DataReadService, useValue: dataReadService},
-        {provide: SpinnerService, useValue: spinnerService}
-      ]
-    })
-    .compileComponents();
+        {
+          provide: Router,
+          useClass: class {
+            navigate = jasmine.createSpy("navigate");
+          },
+        },
+        { provide: DataReadService, useValue: dataReadService },
+        { provide: SpinnerService, useValue: spinnerService },
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -30,7 +40,7 @@ describe('EvolutionDataComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
