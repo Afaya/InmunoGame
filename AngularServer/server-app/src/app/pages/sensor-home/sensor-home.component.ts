@@ -148,4 +148,8 @@ export class SensorHomeComponent implements OnInit {
   seeEvolutionData(): void {
     this.router.navigate(["/evolution"]);
   }
+
+  seePredictions(): void {
+    this.router.navigate(["/prediction"]);
+  }
 }

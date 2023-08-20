@@ -8,9 +8,15 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { EvolutionDataComponent } from "./pages/evolution-data/evolution-data.component";
+import { PredictionPageComponent } from "./pages/prediction-page/prediction-page.component";
 
 @NgModule({
-  declarations: [AppComponent, SensorHomeComponent, EvolutionDataComponent],
+  declarations: [
+    AppComponent,
+    SensorHomeComponent,
+    EvolutionDataComponent,
+    PredictionPageComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
