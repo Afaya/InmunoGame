@@ -1,11 +1,25 @@
 <div class="predictionsContainer">
+  <ngx-spinner></ngx-spinner>
+
   <div class="predictionContainer_cityDiv">
     <label for="cityToSearch">
-      Introduce la ciudad para la que quieres la predicción
+      Introduce la ciudad para la que quieres la predicción de riesgo de
+      contagio de gripe:
     </label>
 
     <input id="cityToSearch" type="text" [(ngModel)]="cityToSearch" />
 
-    <button (click)="showForecast()">Enviar</button>
+    <button class="generalButton" (click)="showForecast()">Enviar</button>
+  </div>
+
+  <div class="predictionsContainer_forecastsDiv" *ngIf="isForecastDisplayed">
+    <div *ngFor="let risk of influenzaRisks" class="predictionsContainer_risk">
+      <span>{{ risk.hour }} </span> - Probabilidad:
+      <span>{{ risk.title }}</span>
+    </div>
+  </div>
+
+  <div class="predictionsContainer_errorsDiv" *ngIf="isErrorDisplayed">
+    <span> Error obteniendo datos, pruebe de nuevo </span>
   </div>
 </div>

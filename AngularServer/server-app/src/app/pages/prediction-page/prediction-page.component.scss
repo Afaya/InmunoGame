@@ -1,1 +1,49 @@
 @import "../../../styles/variables";
+
+.predictionsContainer {
+  color: $color-black;
+
+  .predictionContainer_cityDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 90%;
+    margin: 2rem 0;
+    text-align: center;
+
+    input {
+      height: 2rem;
+      width: 90%;
+    }
+
+    button {
+      height: 3rem;
+      width: 10rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .predictionsContainer_errorsDiv {
+    color: $color-highRisk;
+    font-weight: bold;
+  }
+
+  .predictionsContainer_forecastsDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 80%;
+
+    padding: 1.5rem;
+    overflow-y: scroll;
+    height: 50vh;
+    border: 1px solid $color-lowRisk;
+    border-radius: 0.5rem;
+
+    .predictionsContainer_risk {
+      border-bottom: 1px solid $color-black;
+    }
+  }
+}

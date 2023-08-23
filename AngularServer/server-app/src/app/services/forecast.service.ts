@@ -24,7 +24,7 @@ export class ForecastService {
       "LATITUDE",
       this.truncTo2Decimals(latitude).toString()
     );
-    endpointCompleted = endpointGeolocalization.replace(
+    endpointCompleted = endpointCompleted.replace(
       "LONGITUDE",
       this.truncTo2Decimals(longitude).toString()
     );
