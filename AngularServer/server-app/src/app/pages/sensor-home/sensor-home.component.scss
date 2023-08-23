@@ -8,12 +8,16 @@
   width: 90vw;
 
   button {
-    // margin: auto;
-    min-height: 10vh;
-    max-height: 10vh;
-    font-size: 2em;
+    height: 8vh;
+    font-size: 1.5em;
     margin-top: 10%;
-    // min-width: 40%;
+    border-radius: 0.4em;
+    min-width: 40vw;
+  }
+
+  .buttonsDiv {
+    display: flex;
+    justify-content: space-between;
   }
 
   .sensorInformation {

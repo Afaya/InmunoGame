@@ -7,8 +7,15 @@ import { Component, OnInit } from "@angular/core";
 })
 export class PredictionPageComponent implements OnInit {
   title = "Next hours prediction";
+  cityToSearch: string = "";
+
+  isForecastDisplayed = false;
 
   constructor() {}
 
   ngOnInit() {}
+
+  showForecast(): void {
+    console.log("City " + this.cityToSearch);
+  }
 }

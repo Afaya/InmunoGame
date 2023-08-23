@@ -1,3 +1,11 @@
 <div class="predictionsContainer">
-  <h2>{{ title }}</h2>
+  <div class="predictionContainer_cityDiv">
+    <label for="cityToSearch">
+      Introduce la ciudad para la que quieres la predicción
+    </label>
+
+    <input id="cityToSearch" type="text" [(ngModel)]="cityToSearch" />
+
+    <button (click)="showForecast()">Enviar</button>
+  </div>
 </div>
