@@ -43,10 +43,10 @@ export class SensorHomeComponent implements OnInit {
   readData(): void {
     this.spinnerService.startOnLoading();
     forkJoin(
-      // this.dataReadService.getDHT(),
-      // this.dataReadService.getSDS011()
-      this.dataReadService.getDHTMock(),
-      this.dataReadService.getSDS011Mock()
+      this.dataReadService.getDHT(),
+      this.dataReadService.getSDS011()
+      // this.dataReadService.getDHTMock(),
+      // this.dataReadService.getSDS011Mock()
     ).subscribe(
       (response) => {
         this.riskInfluenza = calculateInfluenzaRatius(

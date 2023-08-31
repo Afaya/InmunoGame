@@ -7,6 +7,8 @@ import { DataReadService } from "src/app/services/data-read.service";
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
+import { Observable, of, throwError } from "rxjs";
+import { By } from "@angular/platform-browser";
 
 describe("SensorHomeComponent", () => {
   let component: SensorHomeComponent;
@@ -44,99 +46,38 @@ describe("SensorHomeComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should return extra high influenza risk", () => {
-    const influenzaReceivedData = {
-      temp: 4,
-      hum: 10,
-    };
-
-    component.calculateInfluenzaRatius(influenzaReceivedData);
-    const expectedResponse = "Muy Alta";
-    expect(component.influenzaRisk).toBe(expectedResponse);
-  });
-
-  it("should return high influenza risk", () => {
-    const influenzaReceivedData = {
-      temp: 4,
-      hum: 20,
-    };
-
-    component.calculateInfluenzaRatius(influenzaReceivedData);
-    const expectedResponse = "Alta";
-    expect(component.influenzaRisk).toBe(expectedResponse);
-  });
-
-  it("should return medium influenza risk", () => {
-    const influenzaReceivedData = {
-      temp: 9,
-      hum: 29,
-    };
-
-    component.calculateInfluenzaRatius(influenzaReceivedData);
-    const expectedResponse = "Media";
-    expect(component.influenzaRisk).toBe(expectedResponse);
-  });
-
-  it("should return medium influenza risk", () => {
-    const influenzaReceivedData = {
-      temp: 15,
-      hum: 29,
-    };
-
-    component.calculateInfluenzaRatius(influenzaReceivedData);
-    const expectedResponse = "Baja";
-    expect(component.influenzaRisk).toBe(expectedResponse);
-  });
-
-  it("should return high allergy risk", () => {
-    const particlesReceivedData = {
-      pm25: 151,
-      pm100: 151,
-    };
-
-    component.calculateParticlesRisk(particlesReceivedData);
-    const expectedResponse = "Muy Alta";
-    expect(component.particlesRisk).toBe(expectedResponse);
-  });
-
-  it("should return high allergy risk", () => {
-    const particlesReceivedData = {
-      pm25: 151,
-      pm100: 99,
-    };
-
-    component.calculateParticlesRisk(particlesReceivedData);
-    const expectedResponse = "Alta";
-    expect(component.particlesRisk).toBe(expectedResponse);
-  });
-
-  it("should return medium allergy risk", () => {
-    const particlesReceivedData = {
-      pm25: 49,
-      pm100: 51,
-    };
-
-    component.calculateParticlesRisk(particlesReceivedData);
-    const expectedResponse = "Media";
-    expect(component.particlesRisk).toBe(expectedResponse);
-  });
-
-  it("should return low influenza risk", () => {
-    const particlesReceivedData = {
-      pm25: 49,
-      pm100: 49,
-    };
-
-    component.calculateParticlesRisk(particlesReceivedData);
-    const expectedResponse = "Baja";
-    expect(component.particlesRisk).toBe(expectedResponse);
-  });
-
   it("should display error text when fails", () => {
-    component.isErrorDisplayed = true;
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector("span").textContent).toContain(
-      "Error al recibir los datos, volveremos a probar en unos segundos"
-    );
+    spyOn(dataReadService, "getDHT")
+      .and.callThrough()
+      .and.returnValue(throwError(new Error("Fake error")));
+    spyOn(dataReadService, "getSDS011")
+      .and.callThrough()
+      .and.returnValue(throwError(new Error("Fake error")));
+
+    component.readData();
+
+    expect(component.isErrorDisplayed).toBeTruthy();
+  });
+
+  it("should not display error when services not fail", () => {
+    spyOn(dataReadService, "getDHT")
+      .and.callThrough()
+      .and.returnValue(
+        of({
+          temp: 37.5,
+          hum: 3,
+        })
+      );
+    spyOn(dataReadService, "getSDS011")
+      .and.callThrough()
+      .and.returnValue(
+        of({
+          pm25: 10,
+          pm100: 5,
+        })
+      );
+    component.readData();
+
+    expect(component.isErrorDisplayed).toBeFalsy();
   });
 });

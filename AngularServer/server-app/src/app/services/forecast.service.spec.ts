@@ -26,14 +26,4 @@ describe("ForecastService", () => {
       .getforecast(43.3604218, -5.8450534)
       .subscribe((result) => expect(result.latitude).toBe(43.36));
   });
-
-  it("numbers should be trunc without round", () => {
-    const service: ForecastService = TestBed.get(ForecastService);
-
-    const testMinor = service.truncTo2Decimals(43.3604218);
-    expect(testMinor).toBe(43.36);
-
-    const testGreater = service.truncTo2Decimals(43.3684218);
-    expect(testGreater).toBe(43.36);
-  });
 });

@@ -2,6 +2,18 @@
 
 .predictionsContainer {
   color: $color-black;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90vh;
+
+  button {
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.2rem;
+  }
 
   .predictionContainer_cityDiv {
     display: flex;
@@ -15,12 +27,6 @@
     input {
       height: 2rem;
       width: 90%;
-    }
-
-    button {
-      height: 3rem;
-      width: 10rem;
-      font-size: 1.2rem;
     }
   }
 

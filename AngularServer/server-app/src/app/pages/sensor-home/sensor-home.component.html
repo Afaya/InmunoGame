@@ -5,6 +5,7 @@
     class="sensorInformation"
     [ngClass]="getInfluenzaClass()"
     *ngIf="!isErrorDisplayed"
+    tabindex="0"
   >
     <h2>Alerta gripe: {{ riskInfluenza.title }}</h2>
     <span>{{ riskInfluenza.description }}</span>
@@ -14,12 +15,13 @@
     class="sensorInformation"
     [ngClass]="getParticlesClass()"
     *ngIf="!isErrorDisplayed"
+    tabindex="0"
   >
     <h2>Alerta alergia: {{ riskParticles.title }}</h2>
     <span>{{ riskParticles.description }}</span>
   </div>
 
-  <span *ngIf="isErrorDisplayed" class="errorMessage">
+  <span *ngIf="isErrorDisplayed" class="errorMessage" tabindex="0">
     Error al recibir los datos, volveremos a probar en unos segundos
   </span>
 

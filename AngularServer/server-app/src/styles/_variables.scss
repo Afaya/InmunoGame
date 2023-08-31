@@ -1,15 +1,15 @@
 /* Colors */
 $color-background: rgb(154, 203, 243);
-$color-font: #F9CDAD;
-$color-font-dark: #FE4365;
-$color-hover: #FC9D9A;
-$color-elements: #FE4365;
-$color-border: #C8C8A9;
-$color-highRisk:#e02d00;
-$color-extraHighRisk:#ff0000;
-$color-mediumRisk:#e6e273;
-$color-lowRisk:#58b942;
-$color-black:#000;
+$color-font: #f9cdad;
+$color-font-dark: #a32a41;
+$color-hover: #fc9d9a;
+$color-elements: #9c283e;
+$color-border: #c8c8a9;
+$color-highRisk: #e02d00;
+$color-extraHighRisk: #ff0000;
+$color-mediumRisk: #e6e273;
+$color-lowRisk: #58b942;
+$color-black: #000;
 
 /* heights */
 $height-html: 100vh;
@@ -31,5 +31,4 @@ $margin-header: 1% 0 1% 0;
 $padding-body: 0% 5% 0% 5%;
 
 /* box shadow */
-$shadow-cards:8px 7px 22px -2px rgba(254,67,101,0.8);
-
+$shadow-cards: 8px 7px 22px -2px rgba(254, 67, 101, 0.8);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { calculateInfluenzaRatius } from "src/app/helpers/risk-calculation";
 import { Risk } from "src/app/models/risks";
 import { ForecastService } from "src/app/services/forecast.service";
@@ -22,10 +23,15 @@ export class PredictionPageComponent implements OnInit {
   constructor(
     private forecastService: ForecastService,
     private geolocalizationService: GeolocalizationService,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
+
+  goBack(): void {
+    this.router.navigate(["/home"]);
+  }
 
   showForecast(): void {
     this.spinnerService.startOnLoading();
